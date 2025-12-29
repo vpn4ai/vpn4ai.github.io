@@ -2,7 +2,15 @@ theme: jekyll-theme-cayman
 
 lang: zh-CN
 title: VPN 推荐指南
-description: 中国可用 VPN 推荐与使用指南
+description: VPN 推荐与使用指南（测评与选购建议）
+
+timezone: Asia/Shanghai
+logo: /assets/images/logo.jpeg
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
 
 url: https://vpn4ai.github.io
 baseurl: ""

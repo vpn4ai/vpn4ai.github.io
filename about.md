@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 关于
+description: 关于 VPN4AI：本站内容范围、更新原则与免责声明说明。
 ---
 
 本网站整理与分享 VPN 相关的选购思路、使用体验与常见问题。

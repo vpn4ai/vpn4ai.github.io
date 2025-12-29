@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 隐私政策
+description: VPN4AI 隐私政策：说明本站可能使用的第三方服务、Cookie 与数据处理方式。
 ---
 
 本网站可能会使用第三方统计与广告服务（例如 Google 相关服务），以帮助我们了解访问情况并展示广告。

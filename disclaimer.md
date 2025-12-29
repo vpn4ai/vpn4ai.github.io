@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 免责声明
+description: VPN4AI 免责声明：内容仅供参考、可能包含推广链接，并提醒遵守当地法律法规。
 ---
 
 本网站内容仅供参考。

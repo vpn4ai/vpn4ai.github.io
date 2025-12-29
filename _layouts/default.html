@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" href="{{ '/assets/images/logo.jpeg' | relative_url }}">
+    <link rel="apple-touch-icon" href="{{ '/assets/images/logo.jpeg' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
-    <meta name="keywords" content="翻墙软件,科学上网,vpn中国,好用的vpn,vpn推荐,翻墙vpn" />
+    <meta name="keywords" content="翻墙,科学上网,vpn, 梯子, 魔法" />
 
 {% if site.adsense_enabled and site.adsense_client and site.adsense_client != '' %}
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client }}" crossorigin="anonymous"></script>
@@ -21,7 +23,14 @@
     <header class="page-header" role="banner">
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+      <div style="max-width: 52rem; margin: 0 auto 10px auto; padding: 10px 12px; border-radius: 6px; background: rgba(255,255,255,0.14);">
+        <div style="font-size: 14px; line-height: 1.6;">
+          本站内容仅作信息参考，不构成任何建议；请遵守当地法律法规。部分链接可能为推广链接。
+          <a href="{{ '/disclaimer' | relative_url }}">免责声明</a> · <a href="{{ '/privacy' | relative_url }}">隐私政策</a> · <a href="{{ '/contact' | relative_url }}">联系</a>
+        </div>
+      </div>
       <p>
+        <a class="btn" href="{{ '/' | relative_url }}">首页</a>
         <a class="btn" href="{{ '/about' | relative_url }}">关于</a>
         <a class="btn" href="{{ '/disclaimer' | relative_url }}">免责声明</a>
         <a class="btn" href="{{ '/privacy' | relative_url }}">隐私政策</a>
