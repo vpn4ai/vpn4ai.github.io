@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 2026年VPN排行榜
+title: VPN排行榜
 description: 2026年 VPN 推荐与使用指南，包含 StrongVPN、ExpressVPN、PureVPN、Surfshark 等实测对比与选购建议。
 ---
 
