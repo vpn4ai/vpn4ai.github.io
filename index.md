@@ -13,9 +13,28 @@
   </div>
 </div>
 
+---
+
+## 📚 11 款总览
+
+- **PureVPN（最推荐 / 长期省钱）**：<a href="{{ '/posts/purevpn-review' | relative_url }}">评测</a> / <a href="{{ site.go_defaults.purevpn }}" target="_blank" rel="nofollow sponsored">官网</a>
+- **NordVPN（大牌稳妥）**：<a href="{{ '/posts/nordvpn-review' | relative_url }}">评测</a> / <a href="{{ site.go_defaults.nordvpn }}" target="_blank" rel="nofollow sponsored">官网</a>
+- **Surfshark（多设备性价比）**：<a href="{{ '/posts/surfshark-review' | relative_url }}">评测</a> / <a href="{{ site.go_defaults.surfshark }}" target="_blank" rel="nofollow sponsored">官网</a>
+- **Ivacy（促销型 / 预算敏感）**：<a href="{{ '/posts/ivacy-review' | relative_url }}">评测</a> / <a href="{{ site.go_defaults.ivacy }}" target="_blank" rel="nofollow sponsored">官网</a>
+- **ExpressVPN（高端省心）**：<a href="{{ '/posts/expressvpn-review' | relative_url }}">评测</a> / <a href="{{ site.go_defaults.expressvpn }}" target="_blank" rel="nofollow sponsored">官网</a>
+- **CyberGhost（流媒体/场景服务器）**：<a href="{{ '/posts/cyberghost-review' | relative_url }}">评测</a> / <a href="{{ site.go_defaults.cyberghost }}" target="_blank" rel="nofollow sponsored">官网</a>
+- **PIA（可配置/技术用户）**：<a href="{{ '/posts/pia-review' | relative_url }}">评测</a> / <a href="{{ site.go_defaults.pia }}" target="_blank" rel="nofollow sponsored">官网</a>
+- **Proton VPN（隐私/安全取向）**：<a href="{{ '/posts/protonvpn-review' | relative_url }}">评测</a> / <a href="{{ site.go_defaults.protonvpn }}" target="_blank" rel="nofollow sponsored">官网</a>
+- **Mullvad（匿名注册/隐私优先）**：<a href="{{ '/posts/mullvad-review' | relative_url }}">评测</a> / <a href="{{ site.go_defaults.mullvad }}" target="_blank" rel="nofollow sponsored">官网</a>
+- **StrongVPN（老牌简洁）**：<a href="{{ '/posts/strongvpn-review' | relative_url }}">评测</a> / <a href="{{ site.go_defaults.strongvpn }}" target="_blank" rel="nofollow sponsored">官网</a>
+- **Atlas VPN（入门低价）**：<a href="{{ '/posts/atlas-review' | relative_url }}">评测</a> / <a href="{{ site.go_defaults.atlas }}" target="_blank" rel="nofollow sponsored">官网</a>
+
+---
+
+## 🥇 最推荐
+
 <div style="margin: 0 0 12px;">
   <div style="font-size: 22px; font-weight: 700; line-height: 1.25;">现在买哪款最不容易踩坑？先看这 4 款</div>
-  <div style="margin-top: 6px; color: rgba(0,0,0,0.65); line-height: 1.6;">每张卡都只保留你做决定最需要的信息：卖点、优惠、退款、以及是否适合跨境访问（参考）。</div>
 </div>
 
 <div style="display:flex; flex-direction:column; gap: 12px;">
@@ -111,22 +130,7 @@
 
 ---
 
-## 📊 精简对比
-
-<div style="overflow-x:auto">
-
-| VPN       | 推荐标签     | 推荐指数  | 是否适合跨境访问（参考） | 核心卖点         | 退款保障   | 入口                                                                                           |
-| --------- | -------- | ----- | ------------ | ------------ | ------ | -------------------------------------------------------------------------------------------- |
-| PureVPN   | 🥇 最推荐   | ⭐⭐⭐⭐⭐ | ✔️（因地区/网络而异） | 强折扣 + 适合长期   | 31 天退款 | <a href="{{ site.go_defaults.purevpn }}" target="_blank" rel="nofollow sponsored">立即购买</a>   |
-| NordVPN   | 🛡️ 大牌稳妥 | ⭐⭐⭐⭐⭐ | ✔️（因地区/网络而异） | 品牌信任强 + 体验成熟 | 30 天退款 | <a href="{{ site.go_defaults.nordvpn }}" target="_blank" rel="nofollow sponsored">立即购买</a>   |
-| Surfshark | 💰 性价比最高 | ⭐⭐⭐⭐  | ✔️（因地区/网络而异） | 多设备更划算       | 30 天退款 | <a href="{{ site.go_defaults.surfshark }}" target="_blank" rel="nofollow sponsored">立即购买</a> |
-| Ivacy     | 🎁 促销型   | ⭐⭐⭐⭐  | ✔️（因地区/网络而异） | 价格敏感更容易下单    | 30 天退款 | <a href="{{ site.go_defaults.ivacy }}" target="_blank" rel="nofollow sponsored">立即购买</a>     |
-
-</div>
-
----
-
-## 🧭 另外 7 款：从不同角度做“次级推荐”（按你的偏好选）
+## 🧭 次级推荐
 
 > 这 7 款更适合放在“场景文章 / 对比文章 / 专题页”里承接流量：用不同理由推荐，避免用户觉得你只是在推同一款。
 
@@ -193,26 +197,4 @@
       <a href="{{ '/posts/atlas-review' | relative_url }}" style="display:inline-block; padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.18); color: #111827; text-decoration:none; font-weight: 700;">看评测与功能</a>
     </div>
   </div>
-</div>
-
----
-
-## 📋 全量对比（11 款，一次看清）
-
-<div style="overflow-x:auto">
-
-| VPN            | 官网                                                                                          | 品牌力   | 是否适合跨境访问（参考） | 适合人群             | 核心卖点（付费驱动）  | 推荐指数  | 当前优惠 / 购买触发   | 付费风险提示        |
-| -------------- | ------------------------------------------------------------------------------------------- | ----- | ------------ | ---------------- | ----------- | ----- | ------------- | ------------- |
-| **NordVPN**    | <a href="{{ site.go_defaults.nordvpn }}" target="_blank" rel="nofollow sponsored">官网</a>    | ⭐⭐⭐⭐⭐ | ✔️           | 普通用户 / 海外访问需求    | 全球知名、稳定性高   | ⭐⭐⭐⭐⭐ | 🎁 常见大折扣      | 🛡️ 30 天退款    |
-| **ExpressVPN** | <a href="{{ site.go_defaults.expressvpn }}" target="_blank" rel="nofollow sponsored">官网</a> | ⭐⭐⭐⭐⭐ | ✔️           | 商务、长期稳定用户        | 信任度强、定位高端   | ⭐⭐⭐⭐☆ | 🎁 常见折扣       | 🛡️ 30 天退款    |
-| **Surfshark**  | <a href="{{ site.go_defaults.surfshark }}" target="_blank" rel="nofollow sponsored">官网</a>  | ⭐⭐⭐⭐  | ✔️           | 多设备用户 / 家庭       | 无限设备连接、性价比强 | ⭐⭐⭐⭐  | 🎁 活动期更大折扣    | 🛡️ 30 天退款    |
-| **StrongVPN**  | <a href="{{ site.go_defaults.strongvpn }}" target="_blank" rel="nofollow sponsored">官网</a>  | ⭐⭐    | ✔️（有时）       | 老用户 / 传统 VPN 需用者 | 老牌、功能够用     | ⭐⭐☆   | 🎁 有促销（不固定）   | ⚠️ 兼容性因设备而异   |
-| **CyberGhost** | <a href="{{ site.go_defaults.cyberghost }}" target="_blank" rel="nofollow sponsored">官网</a> | ⭐⭐⭐   | ✔️（流媒体/欧美）   | 流媒体用户            | UI 友好、服务器多  | ⭐⭐⭐   | 🎁 场景化优惠      | 🛡️ 45 天退款（长） |
-| **PIA**        | <a href="{{ site.go_defaults.pia }}" target="_blank" rel="nofollow sponsored">官网</a>        | ⭐⭐⭐   | ✔️（技术用户）     | 技术/隐私控           | 可配置项多       | ⭐⭐⭐   | 🎁 可观折扣       | ⚠️ 上手偏专业      |
-| **PureVPN**    | <a href="{{ site.go_defaults.purevpn }}" target="_blank" rel="nofollow sponsored">官网</a>    | ⭐⭐⭐   | ✔️           | 长期用户 / 价格敏感      | 强优惠、适合长期    | ⭐⭐⭐⭐  | 🎁 强折扣 + 退款保障 | 🛡️ 31 天退款    |
-| **ProtonVPN**  | <a href="{{ site.go_defaults.protonvpn }}" target="_blank" rel="nofollow sponsored">官网</a>  | ⭐⭐⭐   | ✔️（有限制）      | 安全/隐私爱好者         | 隐私/安全取向     | ⭐⭐⭐   | 🎁 有免费入口      | 🛡️ 30 天退款    |
-| **Mullvad**    | <a href="{{ site.go_defaults.mullvad }}" target="_blank" rel="nofollow sponsored">官网</a>    | ⭐⭐    | ✔️（隐私优先）     | 极端隐私用户           | 匿名注册、隐私口碑高  | ⭐⭐    | ⚠️ 通常无联盟佣金    | ⚠️ 技术门槛更高     |
-| **Ivacy**      | <a href="{{ site.go_defaults.ivacy }}" target="_blank" rel="nofollow sponsored">官网</a>      | ⭐⭐⭐   | ✔️           | 价格敏感 / SEO 导流    | 促销多（适合长尾）   | ⭐⭐⭐⭐  | 🎁 高折扣（活动多）   | 🛡️ 30 天退款    |
-| **Atlas VPN**  | <a href="{{ site.go_defaults.atlas }}" target="_blank" rel="nofollow sponsored">官网</a>      | ⭐⭐    | ✔️（基础需求）     | 初学者用户            | 简单易用、低价     | ⭐⭐☆   | 🎁 低价入门       | ⚠️ 功能更基础      |
-
 </div>
