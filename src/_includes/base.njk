@@ -7,7 +7,18 @@
   '/disclaimer/',
   '/privacy/',
   '/contact/',
-  '/vpn-review-methodology/'
+  '/vpn-review-methodology/',
+  '/posts/nordvpn-review/',
+  '/posts/surfshark-review/',
+  '/posts/protonvpn-review/',
+  '/posts/purevpn-review/',
+  '/posts/expressvpn-review/',
+  '/posts/cyberghost-review/',
+  '/posts/pia-review/',
+  '/posts/ivacy-review/',
+  '/posts/mullvad-review/',
+  '/posts/strongvpn-review/',
+  '/posts/atlas-review/'
 ] %}
 {% set hasEn = canonicalPath in enReadyPaths %}
 <html lang="{{ currentLang }}">
@@ -118,6 +129,9 @@
           "en": "/en"
         };
 
+        var hasEn = {% if hasEn %}true{% else %}false{% endif %};
+        var canonicalPath = "{{ canonicalPath }}";
+
         function getPathWithoutLangPrefix(pathname) {
           for (var i = 0; i < supported.length; i++) {
             var lang = supported[i];
@@ -158,6 +172,11 @@
 
         function buildUrl(targetLang) {
           var basePath = getPathWithoutLangPrefix(location.pathname);
+
+          if (targetLang === "en" && !hasEn) {
+            basePath = "/recommend/";
+          }
+
           var prefix = prefixMap[targetLang] || "";
           var p = prefix + basePath;
           if (p === "") p = "/";
