@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://siwey.xin/sitemap.xml
+Sitemap: https://vpn4ai.pages.dev/sitemap.xml

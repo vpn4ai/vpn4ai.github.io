@@ -7,6 +7,20 @@ module.exports = function (eleventyConfig) {
     return `${base}${p}`;
   });
 
+  eleventyConfig.addFilter("stripLangPrefix", function (pathname) {
+    const p = pathname || "/";
+    if (p === "/en" || p === "/en/") return "/";
+    if (p.startsWith("/en/")) return p.slice(3);
+    return p;
+  });
+
+  eleventyConfig.addFilter("withLangPrefix", function (pathname, lang) {
+    const p = pathname || "/";
+    const base = p.startsWith("/") ? p : `/${p}`;
+    if (lang === "en") return `/en${base === "/" ? "/" : base}`;
+    return base;
+  });
+
   eleventyConfig.addFilter("dateIso", function (value) {
     if (!value) return "";
     const d = value instanceof Date ? value : new Date(value);

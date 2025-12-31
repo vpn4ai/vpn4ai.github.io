@@ -1,5 +1,16 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang }}">
+{% set currentLang = lang or site.lang %}
+{% set canonicalPath = page.url | stripLangPrefix %}
+{% set enReadyPaths = [
+  '/recommend/',
+  '/about/',
+  '/disclaimer/',
+  '/privacy/',
+  '/contact/',
+  '/vpn-review-methodology/'
+] %}
+{% set hasEn = canonicalPath in enReadyPaths %}
+<html lang="{{ currentLang }}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,6 +29,11 @@
     {% endif %}
 
     <link rel="canonical" href="{{ page.url | absoluteUrl(site.url) }}" />
+
+    {% if hasEn %}
+      <link rel="alternate" hreflang="zh" href="{{ canonicalPath | withLangPrefix('zh') | absoluteUrl(site.url) }}" />
+      <link rel="alternate" hreflang="en" href="{{ canonicalPath | withLangPrefix('en') | absoluteUrl(site.url) }}" />
+    {% endif %}
 
     <meta property="og:site_name" content="{{ site.title }}" />
     <meta property="og:type" content="website" />
@@ -60,18 +76,28 @@
       <h1 class="project-name">{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}</h1>
       <h2 class="project-tagline">{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}</h2>
 
+      {% set navHome = '首页' %}
+      {% set navAbout = '关于' %}
+      {% set navDisclaimer = '免责声明' %}
+      {% set navPrivacy = '隐私政策' %}
+      {% set navContact = '联系' %}
+      {% if currentLang == 'en' %}
+        {% set navHome = 'Home' %}
+        {% set navAbout = 'About' %}
+        {% set navDisclaimer = 'Disclaimer' %}
+        {% set navPrivacy = 'Privacy' %}
+        {% set navContact = 'Contact' %}
+      {% endif %}
+
       <nav class="nav">
-        <a class="btn" href="/recommend/">首页</a>
-        <a class="btn" href="/about/">关于</a>
-        <a class="btn" href="/disclaimer/">免责声明</a>
-        <a class="btn" href="/privacy/">隐私政策</a>
-        <a class="btn" href="/contact/">联系</a>
+        <a class="btn" href="{{ '/recommend/' | withLangPrefix(currentLang) }}">{{ navHome }}</a>
+        <a class="btn" href="{{ '/about/' | withLangPrefix(currentLang) }}">{{ navAbout }}</a>
+        <a class="btn" href="{{ '/disclaimer/' | withLangPrefix(currentLang) }}">{{ navDisclaimer }}</a>
+        <a class="btn" href="{{ '/privacy/' | withLangPrefix(currentLang) }}">{{ navPrivacy }}</a>
+        <a class="btn" href="{{ '/contact/' | withLangPrefix(currentLang) }}">{{ navContact }}</a>
         <select id="lang-select" class="btn" style="max-width: 140px;">
           <option value="zh">中文</option>
           <option value="en">English</option>
-          <option value="zh-hant">中文繁體</option>
-          <option value="ru">Русский</option>
-          <option value="fa">فارسی</option>
         </select>
       </nav>
     </header>
@@ -86,13 +112,10 @@
 
     <script>
       (function () {
-        var supported = ["zh", "en", "zh-hant", "ru", "fa"];
+        var supported = ["zh", "en"];
         var prefixMap = {
           "zh": "",
-          "en": "/en",
-          "zh-hant": "/zh-hant",
-          "ru": "/ru",
-          "fa": "/fa"
+          "en": "/en"
         };
 
         function getPathWithoutLangPrefix(pathname) {
@@ -119,11 +142,8 @@
         function normalizeNavigatorLang(l) {
           if (!l) return null;
           var s = String(l).toLowerCase();
-          if (s === "zh-tw" || s === "zh-hk" || s === "zh-mo" || s.indexOf("zh-hant") === 0) return "zh-hant";
           if (s.indexOf("zh") === 0) return "zh";
           if (s.indexOf("en") === 0) return "en";
-          if (s.indexOf("ru") === 0) return "ru";
-          if (s.indexOf("fa") === 0) return "fa";
           return null;
         }
 
