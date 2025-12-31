@@ -35,11 +35,37 @@ h1, h2, h3 {
 }
 
 h1 { font-size: 1.6rem; margin: 0.6rem 0 0.9rem; }
-h2 { font-size: 1.25rem; margin: 1.25rem 0 0.6rem; }
-h3 { font-size: 1.1rem; margin: 1rem 0 0.5rem; }
+h2 {
+  font-size: 1.25rem;
+  margin: 1.6rem 0 0.85rem;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.10);
+  border-left: 6px solid rgba(15, 118, 110, 0.75);
+  background: rgba(15, 118, 110, 0.06);
+}
+
+h3 {
+  font-size: 1.08rem;
+  margin: 1.1rem 0 0.55rem;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-left: 4px solid rgba(37, 99, 235, 0.70);
+  background: rgba(37, 99, 235, 0.05);
+}
+
+h2, h3 {
+  scroll-margin-top: 90px;
+}
 
 ul, ol {
   padding-left: 1.25rem;
+}
+
+.main-content > ul,
+.main-content > ol {
+  margin: 0.7rem 0 0.9rem;
 }
 
 table {
@@ -106,7 +132,7 @@ li { margin: 0.25rem 0; }
 hr {
   border: 0;
   border-top: 1px solid var(--border);
-  margin: 1.25rem 0;
+  margin: 1.35rem 0;
 }
 
 blockquote {
