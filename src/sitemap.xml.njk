@@ -5,13 +5,27 @@ layout: false
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for item in collections.all -%}
-  {%- if item.url and item.url != '/404.html' and item.url != '404.html' and item.url != '/sitemap.xml' and item.url != 'sitemap.xml' and item.url != '/robots.txt' and item.url != 'robots.txt' and (item.url | slice(0, 8)) != '/assets/' and item.data and item.data.permalink != '/sitemap.xml' and item.data.permalink != '/robots.txt' -%}
+  {%- set url = item.url -%}
+  {%- if url
+    and url != '/404.html' and url != '404.html'
+    and url != '/sitemap.xml' and url != 'sitemap.xml'
+    and url != '/robots.txt' and url != 'robots.txt'
+    and url != '/googlef79966437cc3e0e4.html' and url != 'googlef79966437cc3e0e4.html'
+    and (url | slice(0, 8)) != '/assets/'
+    and (not url.startsWith('/google'))
+    and item.data
+    and item.data.permalink != '/sitemap.xml'
+    and item.data.permalink != '/robots.txt'
+    and (not item.data.permalink.startsWith('/google'))
+  -%}
+
   <url>
-    <loc>{{ item.url | absoluteUrl(site.url) }}</loc>
+    <loc>{{ url | absoluteUrl(site.url) }}</loc>
     {%- if item.data and (item.data.updated or item.data.date or item.date or item.page.date) -%}
     <lastmod>{{ (item.data.updated or item.data.date or item.date or item.page.date) | dateIso }}</lastmod>
     {%- endif -%}
   </url>
+
   {%- endif -%}
 {%- endfor -%}
 </urlset>
