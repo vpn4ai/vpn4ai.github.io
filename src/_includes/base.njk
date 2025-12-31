@@ -214,5 +214,69 @@
         });
       })();
     </script>
+
+    <script>
+      (function () {
+        function isH2(node) {
+          return node && node.nodeType === 1 && node.tagName === "H2";
+        }
+
+        function isEmptyText(node) {
+          return node && node.nodeType === 3 && !String(node.textContent || "").trim();
+        }
+
+        function wrapSectionBodies() {
+          var main = document.getElementById("content");
+          if (!main) return;
+
+          var footer = main.querySelector("footer.site-footer");
+          var h2s = [];
+          var cursor = main.firstChild;
+
+          while (cursor && cursor !== footer) {
+            if (isH2(cursor)) h2s.push(cursor);
+            cursor = cursor.nextSibling;
+          }
+
+          if (!h2s.length) return;
+
+          for (var i = 0; i < h2s.length; i++) {
+            var h2 = h2s[i];
+            var next = h2.nextSibling;
+
+            while (isEmptyText(next)) next = next.nextSibling;
+
+            if (next && next.nodeType === 1 && next.classList && next.classList.contains("section-body")) {
+              continue;
+            }
+
+            var body = document.createElement("div");
+            body.className = "section-body";
+            if (h2.nextSibling) {
+              main.insertBefore(body, h2.nextSibling);
+            } else {
+              main.appendChild(body);
+            }
+
+            var n = body.nextSibling;
+            while (n && n !== footer && !isH2(n)) {
+              var nn = n.nextSibling;
+              body.appendChild(n);
+              n = nn;
+            }
+
+            if (!body.firstChild) {
+              body.parentNode && body.parentNode.removeChild(body);
+            }
+          }
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", wrapSectionBodies);
+        } else {
+          wrapSectionBodies();
+        }
+      })();
+    </script>
   </body>
 </html>
