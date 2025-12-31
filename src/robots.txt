@@ -1,4 +1,4 @@
 User-agent: *
-Allow: 
+Allow: /
 
-Sitemap: https://vpn4ai.pages.dev/sitemap.xml
+Sitemap: https://www.an1688.com/sitemap.xml
