@@ -125,11 +125,6 @@
       (function () {
         var supported = ["zh", "en"];
         var canonicalPath = "{{ canonicalPath }}";
-        var enPrefix = canonicalPath && canonicalPath.indexOf("/vpn/") === 0 ? "/vpn/en" : "/en";
-        var prefixMap = {
-          "zh": "",
-          "en": enPrefix
-        };
 
         var hasEn = {% if hasEn %}true{% else %}false{% endif %};
 
@@ -138,9 +133,8 @@
           if (pathname.indexOf("/vpn/en/") === 0) return "/vpn/" + pathname.slice(8);
           for (var i = 0; i < supported.length; i++) {
             var lang = supported[i];
-            var prefix = prefixMap[lang];
-            if (prefix && (pathname === prefix + "/" || pathname.indexOf(prefix + "/") === 0)) {
-              var rest = pathname.slice(prefix.length);
+            if (lang === "en" && (pathname === "/en/" || pathname.indexOf("/en/") === 0)) {
+              var rest = pathname.slice(3);
               return rest || "/";
             }
           }
@@ -151,8 +145,7 @@
           if (pathname === "/vpn/en" || pathname === "/vpn/en/" || pathname.indexOf("/vpn/en/") === 0) return "en";
           for (var i = 0; i < supported.length; i++) {
             var lang = supported[i];
-            var prefix = prefixMap[lang];
-            if (prefix && (pathname === prefix + "/" || pathname.indexOf(prefix + "/") === 0)) return lang;
+            if (lang === "en" && (pathname === "/en/" || pathname.indexOf("/en/") === 0)) return lang;
           }
           return "zh";
         }
@@ -181,8 +174,16 @@
             basePath = "/vpn/recommend/";
           }
 
-          var prefix = prefixMap[targetLang] || "";
-          var p = prefix + basePath;
+          var p = basePath;
+          if (targetLang === "en") {
+            if (p === "/vpn" || p === "/vpn/") {
+              p = "/vpn/en/";
+            } else if (p.indexOf("/vpn/") === 0) {
+              p = "/vpn/en" + p.slice(4);
+            } else {
+              p = "/en" + (p === "/" ? "/" : p);
+            }
+          }
           if (p === "") p = "/";
           return p + location.search + location.hash;
         }
