@@ -248,6 +248,11 @@ blockquote {
   font-weight: 800;
 }
 
+h2#top + p + .vpn-card-list .vpn-card-title {
+  font-size: 20px;
+  font-weight: 900;
+}
+
 .vpn-card-badge {
   font-size: 18px;
   font-weight: 700;
@@ -359,6 +364,11 @@ blockquote {
 
   .vpn-card-title {
     font-size: 16px;
+  }
+
+  h2#top + p + .vpn-card-list .vpn-card-title {
+    font-size: 18px;
+    font-weight: 900;
   }
 
   .vpn-card-badge {
