@@ -108,6 +108,7 @@
     </main>
 
     {% set footerTitle = '关注 an1688' %}
+    {% set footerDesc = 'an1688 致力于为用户提供 VPN 评测与选购建议，帮助用户在隐私保护、跨境办公、学习与内容访问等场景下做出更合适的选择。' %}
     {% set footerTerms = 'Terms' %}
     {% set footerPrivacy = 'privacy-policy' %}
     {% set footerDmca = 'DMCA' %}
@@ -116,6 +117,7 @@
     {% set footerReviews = '评测文章' %}
     {% if currentLang == 'en' %}
       {% set footerTitle = 'Follow an1688' %}
+      {% set footerDesc = 'an1688 is dedicated to providing VPN reviews and purchasing recommendations, helping users make better choices for privacy protection, cross-border work, learning, and content access.' %}
       {% set footerTerms = 'Terms' %}
       {% set footerPrivacy = 'privacy-policy' %}
       {% set footerDmca = 'DMCA' %}
@@ -126,20 +128,19 @@
 
     <footer class="site-footer" role="contentinfo">
       <div class="site-footer-inner">
-        <div class="site-footer-col site-footer-col-logo" aria-hidden="true">
-          <img class="site-footer-logo" src="/assets/images/logo.png" alt="" loading="lazy" />
+        <div class="site-footer-brand">
+          <img class="site-footer-logo" src="/assets/images/logo.png" alt="an1688" loading="lazy" />
+          <div class="site-footer-brand-text">
+            <div class="site-footer-brand-title">{{ site.title }}</div>
+            <div class="site-footer-brand-desc">{{ footerDesc }}</div>
+          </div>
         </div>
 
-        <div class="site-footer-col">
-          <div class="site-footer-heading">Links</div>
+        <div class="site-footer-links-wrap">
           <div class="site-footer-links">
             <a href="{{ '/vpn/recommend/' | withLangPrefix(currentLang) }}">{{ footerVpnRecommend }}</a>
             <a href="{{ '/vpn/posts/' | withLangPrefix(currentLang) }}">{{ footerReviews }}</a>
           </div>
-        </div>
-
-        <div class="site-footer-col">
-          <div class="site-footer-heading">Policies</div>
           <div class="site-footer-links">
             <a href="/terms/">{{ footerTerms }}</a>
             <a href="/privacy-policy/">{{ footerPrivacy }}</a>

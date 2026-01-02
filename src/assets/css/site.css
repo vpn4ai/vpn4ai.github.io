@@ -93,7 +93,7 @@ ul, ol {
 .site-topbar-inner {
   max-width: var(--page-max);
   margin: 0 auto;
-  padding: 8px 16px;
+  padding: 12px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -113,8 +113,8 @@ ul, ol {
 }
 
 .site-topbar-logo {
-  width: 22px;
-  height: 22px;
+  width: 28px;
+  height: 28px;
   border-radius: 8px;
   background: rgba(255,255,255,0.10);
   object-fit: contain;
@@ -128,26 +128,23 @@ ul, ol {
 .site-topbar-right {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .site-topbar-lang {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  padding: 10px 38px 10px 12px;
-  border-radius: 10px;
+  padding: 8px 32px 8px 12px;
+  border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.18);
   background: rgba(255,255,255,0.10);
   color: rgba(255,255,255,0.92);
-  font-weight: 800;
+  font-weight: 700;
+  font-size: 14px;
   cursor: pointer;
-  line-height: 1.1;
   position: relative;
-  z-index: 1;
-}
-
-.site-topbar-lang option {
-  color: #111827;
+  z-index: 10;
 }
 
 .site-topbar-lang:focus {
@@ -155,19 +152,15 @@ ul, ol {
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35);
 }
 
-.site-topbar-right {
-  position: relative;
-}
-
 .site-topbar-right::after {
   content: "▾";
   position: absolute;
-  right: 12px;
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  opacity: 0.9;
+  opacity: 0.85;
   pointer-events: none;
-  z-index: 2;
+  z-index: 5;
 }
 
 table {
@@ -537,46 +530,69 @@ h2#top + p + .vpn-card-list .vpn-card-title {
   text-decoration: underline;
 }
 
-.site-footer .site-footer-heading {
-  color: rgba(255,255,255,0.94) !important;
+.site-footer-brand {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
 }
 
-.site-footer .site-footer-brand-title {
-  color: rgba(255,255,255,0.96) !important;
+.site-footer-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
-.site-footer .site-footer-links a,
-.site-footer .site-footer-links a:visited {
-  color: rgba(255,255,255,0.90) !important;
+.site-footer-brand-text {
+  flex: 1;
+}
+
+.site-footer-brand-title {
+  font-weight: 900;
+  color: rgba(255,255,255,0.96);
+  margin-bottom: 6px;
+}
+
+.site-footer-brand-desc {
+  color: rgba(255,255,255,0.72);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.site-footer-links-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.site-footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.site-footer-links a {
+  color: rgba(255,255,255,0.88) !important;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.site-footer-links a:hover {
+  color: rgba(255,255,255,1) !important;
+  text-decoration: underline;
 }
 
 .site-footer-inner {
   max-width: var(--page-max);
   margin: 0 auto;
-  padding: 20px 16px;
+  padding: 24px 16px;
   display: grid;
-  grid-template-columns: 56px 1fr 1fr;
-  gap: 16px;
-}
-
-.site-footer-col-logo {
-  display: flex;
-  align-items: flex-start;
-}
-
-.site-footer-col-logo .site-footer-logo {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.10);
-}
-
-.site-footer {
-  color: rgba(255,255,255,0.90);
-}
-
-.site-footer .site-footer-col {
-  color: rgba(255,255,255,0.90);
+  grid-template-columns: 1.2fr 1.8fr;
+  gap: 24px;
+  align-items: start;
 }
 
 .site-footer-brand {
@@ -658,10 +674,6 @@ h2#top + p + .vpn-card-list .vpn-card-title {
 @media (max-width: 720px) {
   .site-footer-inner {
     grid-template-columns: 1fr;
-  }
-
-  .site-footer-col-logo {
-    justify-content: center;
   }
 }
 
