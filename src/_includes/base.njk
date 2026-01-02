@@ -2,7 +2,9 @@
 {% set currentLang = lang or site.lang %}
 {% set canonicalPath = page.url | stripLangPrefix %}
 {% set enReadyPaths = [
+  '/',
   '/vpn/recommend/',
+  '/vpn/posts/',
   '/about/',
   '/disclaimer/',
   '/privacy/',
@@ -88,16 +90,18 @@
   </head>
   <body>
     <header class="page-header" role="banner">
-      <h1 class="project-name">{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}</h1>
+      <div class="project-name">{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}</div>
       <h2 class="project-tagline">{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}</h2>
 
       {% set navHome = '首页' %}
+      {% set navPosts = '评测' %}
       {% set navAbout = '关于' %}
       {% set navDisclaimer = '免责声明' %}
       {% set navPrivacy = '隐私政策' %}
       {% set navContact = '联系' %}
       {% if currentLang == 'en' %}
         {% set navHome = 'Home' %}
+        {% set navPosts = 'Reviews' %}
         {% set navAbout = 'About' %}
         {% set navDisclaimer = 'Disclaimer' %}
         {% set navPrivacy = 'Privacy' %}
@@ -106,6 +110,7 @@
 
       <nav class="nav">
         <a class="btn" href="{{ '/vpn/recommend/' | withLangPrefix(currentLang) }}">{{ navHome }}</a>
+        <a class="btn" href="{{ '/vpn/posts/' | withLangPrefix(currentLang) }}">{{ navPosts }}</a>
         <a class="btn" href="{{ '/about/' | withLangPrefix(currentLang) }}">{{ navAbout }}</a>
         <a class="btn" href="{{ '/disclaimer/' | withLangPrefix(currentLang) }}">{{ navDisclaimer }}</a>
         <a class="btn" href="{{ '/privacy/' | withLangPrefix(currentLang) }}">{{ navPrivacy }}</a>
