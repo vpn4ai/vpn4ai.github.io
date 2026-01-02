@@ -7,10 +7,7 @@
   '/vpn/posts/',
   '/about/',
   '/disclaimer/',
-  '/privacy/',
   '/contact/',
-  '/dmca/',
-  '/terms/',
   '/vpn/review-methodology/',
   '/vpn/posts/nordvpn-review/',
   '/vpn/posts/surfshark-review/',
@@ -59,15 +56,15 @@
     <meta property="og:url" content="{{ page.url | absoluteUrl(site.url) }}" />
     <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}" />
     <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
-    <meta property="og:image" content="{{ '/assets/images/logo.jpeg' | absoluteUrl(site.url) }}" />
+    <meta property="og:image" content="{{ '/assets/images/logo.png' | absoluteUrl(site.url) }}" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}" />
     <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
-    <meta name="twitter:image" content="{{ '/assets/images/logo.jpeg' | absoluteUrl(site.url) }}" />
+    <meta name="twitter:image" content="{{ '/assets/images/logo.png' | absoluteUrl(site.url) }}" />
 
-    <link rel="icon" href="/assets/images/logo.jpeg" />
-    <link rel="apple-touch-icon" href="/assets/images/logo.jpeg" />
+    <link rel="icon" href="/assets/images/logo.png" />
+    <link rel="apple-touch-icon" href="/assets/images/logo.png" />
 
     <script type="application/ld+json">
       {
@@ -84,21 +81,21 @@
         "@type": "Organization",
         "name": "{{ site.title }}",
         "url": "{{ '/' | absoluteUrl(site.url) }}",
-        "logo": "{{ '/assets/images/logo.jpeg' | absoluteUrl(site.url) }}"
+        "logo": "{{ '/assets/images/logo.png' | absoluteUrl(site.url) }}"
       }
     </script>
 
-    	<link rel="stylesheet" href="/assets/css/site.css" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
   </head>
-  <body data-canonical-path="{{ canonicalPath }}">
+  <body>
     <header class="page-header" role="banner">
       <div class="project-name">{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}</div>
       <h2 class="project-tagline">{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}</h2>
 
-      {% set navHome = '首页' %}
+      {% set navHome = '推荐' %}
       {% set navPosts = '评测' %}
       {% if currentLang == 'en' %}
-        {% set navHome = 'Home' %}
+        {% set navHome = 'Guide' %}
         {% set navPosts = 'Reviews' %}
       {% endif %}
 
@@ -114,60 +111,52 @@
 
     <main id="content" class="main-content" role="main">
       {{ content | safe }}
-
-      <footer class="site-footer" role="contentinfo">
-        <div class="site-footer-inner">
-          <div class="site-footer-brand">
-            <div class="site-footer-logo" aria-hidden="true">
-              <img src="/assets/images/logo.jpeg" alt="An1688" />
-            </div>
-            <div class="site-footer-desc">
-              {% if currentLang == 'en' %}
-                An1688 publishes VPN recommendations and hands-on reviews focused on privacy protection and connection security.
-              {% else %}
-                An1688 整理 VPN 选购思路与真实评测，聚焦隐私保护与连接安全。
-              {% endif %}
-            </div>
-          </div>
-
-          <div class="site-footer-cols">
-            <div class="site-footer-col">
-              <div class="site-footer-title">{% if currentLang == 'en' %}Site{% else %}站点{% endif %}</div>
-              <a class="site-footer-link" href="{{ '/about/' | withLangPrefix(currentLang) }}">{% if currentLang == 'en' %}About{% else %}关于{% endif %}</a>
-              <a class="site-footer-link" href="{{ '/vpn/review-methodology/' | withLangPrefix(currentLang) }}">{% if currentLang == 'en' %}Methodology{% else %}评测方法{% endif %}</a>
-              <a class="site-footer-link" href="{{ '/vpn/posts/' | withLangPrefix(currentLang) }}">{% if currentLang == 'en' %}Reviews{% else %}评测文章{% endif %}</a>
-            </div>
-
-            <div class="site-footer-col">
-              <div class="site-footer-title">{% if currentLang == 'en' %}Policies{% else %}政策{% endif %}</div>
-              <a class="site-footer-link" href="{{ '/privacy/' | withLangPrefix(currentLang) }}">{% if currentLang == 'en' %}Privacy{% else %}隐私政策{% endif %}</a>
-              <a class="site-footer-link" href="{{ '/disclaimer/' | withLangPrefix(currentLang) }}">{% if currentLang == 'en' %}Disclaimer{% else %}免责声明{% endif %}</a>
-              <a class="site-footer-link" href="{{ '/dmca/' | withLangPrefix(currentLang) }}">DMCA Policy</a>
-              <a class="site-footer-link" href="{{ '/terms/' | withLangPrefix(currentLang) }}">{% if currentLang == 'en' %}Terms &amp; Conditions{% else %}条款与条件{% endif %}</a>
-            </div>
-
-            <div class="site-footer-col">
-              <div class="site-footer-title">{% if currentLang == 'en' %}Contact{% else %}联系{% endif %}</div>
-              <a class="site-footer-link" href="{{ '/contact/' | withLangPrefix(currentLang) }}">{% if currentLang == 'en' %}Contact{% else %}联系{% endif %}</a>
-              <div class="site-footer-muted">siwey.xin@gmail.com</div>
-            </div>
-
-            <div class="site-footer-col">
-              <div class="site-footer-title">{% if currentLang == 'en' %}Follow An1688{% else %}关注 An1688{% endif %}</div>
-              <div class="site-footer-social">
-                <a class="site-footer-social-btn" href="#" rel="nofollow">Facebook</a>
-                <a class="site-footer-social-btn" href="#" rel="nofollow">X</a>
-                <a class="site-footer-social-btn" href="#" rel="nofollow">YouTube</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="site-footer-bottom">
-          <div>© 2026 an1688.com</div>
-        </div>
-      </footer>
     </main>
+
+    {% set footerTitle = '关注 an1688' %}
+    {% set footerTerms = 'Terms' %}
+    {% set footerPrivacy = 'privacy-policy' %}
+    {% set footerDmca = 'DMCA' %}
+    {% set footerAffiliate = 'Affiliate Disclosure' %}
+    {% if currentLang == 'en' %}
+      {% set footerTitle = 'Follow an1688' %}
+      {% set footerTerms = 'Terms' %}
+      {% set footerPrivacy = 'privacy-policy' %}
+      {% set footerDmca = 'DMCA' %}
+      {% set footerAffiliate = 'Affiliate Disclosure' %}
+    {% endif %}
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="site-footer-inner">
+        <div class="site-footer-col">
+          <div class="site-footer-brand">
+            <img class="site-footer-logo" src="/assets/images/logo.png" alt="an1688" loading="lazy" />
+            <div class="site-footer-brand-text">
+              <div class="site-footer-brand-title">{{ site.title }}</div>
+              <div class="site-footer-brand-desc">{{ site.description }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-footer-col">
+          <div class="site-footer-heading">Policies</div>
+          <div class="site-footer-links site-footer-links-inline">
+            <a href="/terms/">{{ footerTerms }}</a>
+            <span class="site-footer-sep">|</span>
+            <a href="/privacy-policy/">{{ footerPrivacy }}</a>
+            <span class="site-footer-sep">|</span>
+            <a href="/dmca/">{{ footerDmca }}</a>
+            <span class="site-footer-sep">|</span>
+            <a href="/affiliate-disclosure/">{{ footerAffiliate }}</a>
+          </div>
+          <div class="site-footer-heading" style="margin-top: 12px;">{{ footerTitle }}</div>
+          <div class="site-footer-links">
+            <a href="https://www.an1688.com" target="_blank" rel="nofollow">an1688.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer-bottom">© 2026 an1688</div>
+    </footer>
 
     <script>
       (function () {
@@ -217,6 +206,22 @@
 
         function buildUrl(targetLang) {
           var basePath = getPathWithoutLangPrefix(location.pathname);
+
+          if (basePath === "/dmca/" || basePath === "/dmca") {
+            return "/dmca/" + location.search + location.hash;
+          }
+
+          if (basePath === "/terms/" || basePath === "/terms") {
+            return "/terms/" + location.search + location.hash;
+          }
+
+          if (basePath === "/privacy-policy/" || basePath === "/privacy-policy") {
+            return "/privacy-policy/" + location.search + location.hash;
+          }
+
+          if (basePath === "/affiliate-disclosure/" || basePath === "/affiliate-disclosure") {
+            return "/affiliate-disclosure/" + location.search + location.hash;
+          }
 
           if (targetLang === "en" && !hasEn) {
             basePath = "/vpn/recommend/";
