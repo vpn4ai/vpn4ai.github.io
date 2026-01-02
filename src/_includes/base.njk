@@ -119,6 +119,7 @@
     {% set footerAffiliate = 'Affiliate Disclosure' %}
     {% set footerVpnRecommend = '首页' %}
     {% set footerReviews = '评测文章' %}
+    {% set footerBrandDesc = 'an1688.com 专注跨境网络与数字工具选购：提供 VPN 评测、场景化推荐与避坑指南，帮助你更稳、更省心地选择合适方案。' %}
     {% if currentLang == 'en' %}
       {% set footerTitle = 'Follow an1688' %}
       {% set footerTerms = 'Terms' %}
@@ -127,6 +128,7 @@
       {% set footerAffiliate = 'Affiliate Disclosure' %}
       {% set footerVpnRecommend = 'Home' %}
       {% set footerReviews = 'Reviews' %}
+      {% set footerBrandDesc = 'An1688.com is a reader-supported guide for cross-border connectivity and digital tools. We publish scenario-based VPN reviews and practical buying tips to help you choose with confidence.' %}
     {% endif %}
 
     <footer class="site-footer" role="contentinfo">
@@ -135,8 +137,7 @@
           <div class="site-footer-brand">
             <img class="site-footer-logo" src="/assets/images/logo.png" alt="an1688" loading="lazy" />
             <div class="site-footer-brand-text">
-              <div class="site-footer-brand-title">{{ site.title }}</div>
-              <div class="site-footer-brand-desc">{{ site.description }}</div>
+              <div class="site-footer-brand-desc">{{ footerBrandDesc }}</div>
             </div>
           </div>
         </div>
