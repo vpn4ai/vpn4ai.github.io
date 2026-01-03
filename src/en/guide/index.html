@@ -1,7 +1,7 @@
 ---
 layout: base.njk
-title: Guide (Noindex)
-description: This directory does not participate in SEO. No indexing, no sitemap, no internal linking.
+title: Mainland China Guide
+description: An internal reference for Mainland China readers: terminology, pitfalls, and an article index. This directory does not participate in SEO.
 permalink: /vpn/en/guide/
 lang: en
 noindex: true
@@ -9,8 +9,185 @@ nointerlink: true
 sitemap: false
 ---
 
-<h1>Guide (Noindex)</h1>
+<h1>Mainland China access guide & pitfalls (Guide)</h1>
 
 <p>
-  This directory and its subpages do not participate in SEO: no indexing, not included in the sitemap, and no internal linking.
+  Due to the network governance environment, many overseas VPN services may be partially restricted or blocked in Mainland China.
+  This does not necessarily mean the VPN is “broken” or “low quality” — it is often a real-world difference caused by the local network environment.
+  A VPN that works well in Europe or the US may, in Mainland China, run into issues such as:
+</p>
+
+<ul>
+  <li>Cannot connect</li>
+  <li>Very slow speeds</li>
+  <li>Frequent disconnects</li>
+  <li>Client login failures</li>
+</ul>
+
+<p>
+  Therefore, if you are in Mainland China, you should evaluate tools based on whether they can work under the local network environment,
+  rather than relying solely on overseas rankings or marketing.
+  This directory is for information reference only. Please comply with applicable laws and service terms.
+</p>
+
+<h2>1. What can this site do for you?</h2>
+
+<p>
+  This site is mainly for Mainland China readers and provides references including:
+</p>
+
+<ul>
+  <li><strong>Hands-on testing notes</strong> for VPN / network tools</li>
+  <li><strong>Summaries from credible sources</strong> (technical communities and long-term user feedback)</li>
+  <li><strong>Honest caveats</strong> about products that are not suitable for Mainland China (no exaggerated claims)</li>
+  <li><strong>Basic concepts</strong> to help beginners reduce trial-and-error</li>
+</ul>
+
+<p>
+  We do not guarantee “100% availability”, because that does not exist in reality. But we will try to clarify:
+</p>
+
+<ul>
+  <li>What is more likely to work at the current stage</li>
+  <li>What has higher risk</li>
+  <li>What you should avoid</li>
+</ul>
+
+<h2>1. Why we maintain a separate Mainland China guide</h2>
+
+<p>
+  In Mainland China, network conditions and access policies can lead to instability and fluctuating connectivity for cross-border services.
+  Therefore, experiences described in “global rankings” often do not translate well.
+</p>
+
+<div class="hero-banner">
+  <img src="/assets/images/GFW.jpeg" alt="Network environment illustration" loading="lazy" />
+</div>
+
+<h2>2. What this Guide includes</h2>
+
+<ul>
+  <li><strong>Basics:</strong> key terms and prerequisites to reduce trial-and-error.</li>
+  <li><strong>Evaluation framework:</strong> explain differences using reusable criteria (stability, cost, risk factors).</li>
+  <li><strong>Pitfalls list:</strong> clear warnings for risky patterns and practices.</li>
+  <li><strong>Article index:</strong> all new content will be linked from this page.</li>
+</ul>
+
+<div class="hero-banner">
+  <img src="/assets/images/SS.png" alt="Client screenshot" loading="lazy" />
+</div>
+
+<h2>3. Key terms (beginners)</h2>
+
+<h3>What does “bypassing restrictions” mean?</h3>
+
+<p>
+  It is a colloquial term describing using technical methods to access websites or services that are not directly reachable under the local network environment.
+</p>
+
+<p>
+  Common reasons include:
+</p>
+
+<ul>
+  <li>Accessing overseas information and resources</li>
+  <li>Using foreign software or services</li>
+  <li>Accessing region-locked content</li>
+</ul>
+
+<h3>What is a VPN?</h3>
+
+<p>
+  VPN (Virtual Private Network) is an encrypted networking method that helps protect data on untrusted networks and may change your network egress location.
+</p>
+
+<p>
+  <strong>Important:</strong>
+</p>
+
+<ul>
+  <li>A VPN does not necessarily work in Mainland China</li>
+  <li>Whether it works depends on protocols, server quality, operating model, and more</li>
+</ul>
+
+<h3>What is an “Airport”?</h3>
+
+<p>
+  “Airport” is a Mainland China slang term for certain proxy subscription providers. They often have these characteristics:
+</p>
+
+<ul>
+  <li>Provide subscription links</li>
+  <li>Require specific clients (e.g., Clash, Shadowrocket)</li>
+  <li>Low entry barrier and often cheaper</li>
+  <li>Quality varies significantly in stability and security</li>
+</ul>
+
+<p>
+  This is not an official category and there is no unified standard — quality can vary widely.
+</p>
+
+<h2>3. Usage notes (important)</h2>
+
+<ul>
+  <li>We do not claim “always works” or “100% stable”. Conditions change over time.</li>
+  <li>For long-term decisions, short-cycle and small-budget trials are usually safer.</li>
+</ul>
+
+<h2>4. “Airport” essentials (very important)</h2>
+
+<p>
+  The following points are not fear-mongering — they are based on many real user experiences:
+</p>
+
+<ol>
+  <li><strong>Any low-barrier provider can disappear.</strong> The probability and timing vary. Do not treat them as a long-term, stable service.</li>
+  <li><strong>Avoid prepaid plans longer than 1 year.</strong> The cheaper and longer the plan, the higher the risk. Prefer monthly or quarterly payments; avoid large upfront top-ups.</li>
+  <li><strong>Minimize registration information.</strong> Use a secondary email account; avoid phone number signups; avoid real-name or social-account details. Principle: leave as little as possible.</li>
+  <li><strong>Prefer providers with 3+ years of operation.</strong> No guarantees, but they have typically survived multiple rounds of restrictions and have more operational experience.</li>
+</ol>
+
+<h2>5. A few blunt truths (pitfalls)</h2>
+
+<ul>
+  <li>Claims like “permanently stable” or “never blocked” are usually unreliable</li>
+  <li>If the price is significantly below the market average, be extra cautious</li>
+  <li>If real-name or phone verification is mandatory, it is generally not recommended</li>
+  <li>Clear instructions, refund rules, and a visible history are usually better signs</li>
+</ul>
+
+<h2>6. Our position & disclosure</h2>
+
+<p>
+  This site is not driven by a “get-rich-quick” motive. Our goal is to provide more realistic and useful references on VPN and network tools for Mainland China readers,
+  helping you make safer and more rational decisions.
+</p>
+
+<h2>7. Affiliate disclosure</h2>
+
+<p>
+  Some pages may contain product recommendation links. If you purchase through them, we may earn a small commission.
+  This does not increase your cost. The proceeds help cover hosting, testing, and ongoing content updates.
+</p>
+
+<h2>8. Article list (updated over time)</h2>
+
+<p>
+  New Guide articles will be linked here.
+</p>
+
+<ul>
+  <li><a href="/vpn/en/guide/airport-vpn-review/" rel="nofollow">Proxy / "Airport" reviews & recommendations</a>: criteria, risks, and how to choose more carefully (Guide).</li>
+</ul>
+
+<h2>9. A final note</h2>
+
+<p>
+  Network conditions change, tools change — there is no one-time solution.
+  What we can do is to lay out the known information as clearly as possible.
+</p>
+
+<p>
+  If you are new to these topics: go slowly; avoid spending too much upfront; compare options; and leave room for uncertainty.
+  We will continue updating this directory for your reference.
 </p>
