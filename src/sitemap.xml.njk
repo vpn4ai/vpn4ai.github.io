@@ -7,6 +7,7 @@ layout: false
 {%- for item in collections.all -%}
   {%- set url = item.url -%}
   {%- set permalink = (item.data and item.data.permalink) or '' -%}
+  {%- set sitemapFlag = (item.data and item.data.sitemap) -%}
   {%- if url
     and url != '/404.html' and url != '404.html'
     and url != '/sitemap.xml' and url != 'sitemap.xml'
@@ -15,11 +16,16 @@ layout: false
     and (url | slice(0, 8)) != '/assets/'
     and (not url.startsWith('/google'))
     and (not url.startsWith('/baidu_verify'))
+    and (not url.startsWith('/vpn/guide/'))
+    and (not url.startsWith('/vpn/en/guide/'))
     and item.data
+    and sitemapFlag != false
     and permalink != '/sitemap.xml'
     and permalink != '/robots.txt'
     and (not permalink.startsWith('/google'))
     and (not permalink.startsWith('/baidu_verify'))
+    and (not permalink.startsWith('/vpn/guide/'))
+    and (not permalink.startsWith('/vpn/en/guide/'))
   -%}
 
   <url>

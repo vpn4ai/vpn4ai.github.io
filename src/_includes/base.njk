@@ -165,21 +165,23 @@
         {% set navKb = 'Knowledge Base' %}
       {% endif %}
 
-      <nav class="nav">
-        <a class="btn" href="{{ '/vpn/recommend/' | withLangPrefix(langKey) }}">{{ navHome }}</a>
-        <a class="btn" href="{{ '/vpn/kb/' | withLangPrefix(langKey) }}">{{ navKb }}</a>
-        <a class="btn" href="{{ '/vpn/posts/' | withLangPrefix(langKey) }}">{{ navPosts }}</a>
-        <select id="lang-select" class="btn" style="max-width: 140px;">
-          <option value="zh">中文</option>
-          <option value="en">English</option>
-        </select>
-      </nav>
+      {% if not nointerlink %}
+        <nav class="nav">
+          <a class="btn" href="{{ '/vpn/recommend/' | withLangPrefix(langKey) }}">{{ navHome }}</a>
+          <a class="btn" href="{{ '/vpn/kb/' | withLangPrefix(langKey) }}">{{ navKb }}</a>
+          <a class="btn" href="{{ '/vpn/posts/' | withLangPrefix(langKey) }}">{{ navPosts }}</a>
+          <select id="lang-select" class="btn" style="max-width: 140px;">
+            <option value="zh">中文</option>
+            <option value="en">English</option>
+          </select>
+        </nav>
+      {% endif %}
     </header>
 
     <main id="content" class="main-content" role="main">
       {{ content | safe }}
 
-      {% if isReviewPage %}
+      {% if isReviewPage and (not nointerlink) %}
         {% set moreTitle = '继续阅读' %}
         {% set moreDesc = '如果你要更快做决定，可以从“总推荐”开始，然后对比评测方法与知识库要点。' %}
         {% set moreRecommend = '回到推荐榜单（按场景）' %}
@@ -228,41 +230,50 @@
       {% set footerBrandDesc = 'An1688.com is a reader-supported guide for cross-border connectivity and digital tools. We publish scenario-based VPN reviews and practical buying tips to help you choose with confidence.' %}
     {% endif %}
 
-    <footer class="site-footer" role="contentinfo">
-      <div class="site-footer-inner">
-        <div class="site-footer-col">
-          <div class="site-footer-brand">
-            <img class="site-footer-logo" src="/assets/images/logo.png" alt="an1688" loading="lazy" />
-            <div class="site-footer-brand-text">
-              <div class="site-footer-brand-desc">{{ footerBrandDesc }}</div>
+    {% if not nointerlink %}
+      <footer class="site-footer" role="contentinfo">
+        <div class="site-footer-inner">
+          <div class="site-footer-col">
+            <div class="site-footer-brand">
+              <img class="site-footer-logo" src="/assets/images/logo.png" alt="an1688" loading="lazy" />
+              <div class="site-footer-brand-text">
+                <div class="site-footer-brand-desc">{{ footerBrandDesc }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="site-footer-col">
+            <div class="site-footer-links">
+              <a href="{{ '/vpn/recommend/' | withLangPrefix(langKey) }}">{{ footerVpnRecommend }}</a>
+              <a href="{{ '/vpn/posts/' | withLangPrefix(langKey) }}">{{ footerReviews }}</a>
+            </div>
+          </div>
+
+          <div class="site-footer-col">
+            <div class="site-footer-links">
+              <div style="font-weight: 800; margin-bottom: 6px;">友情链接</div>
+              <a href="https://www.vpn-china.org/" target="_blank" rel="nofollow">VPN中国</a>
+            </div>
+          </div>
+
+          <div class="site-footer-col">
+            <div class="site-footer-links">
+              <a href="/terms/">{{ footerTerms }}</a>
+              <a href="/privacy-policy/">{{ footerPrivacy }}</a>
+              <a href="/dmca/">{{ footerDmca }}</a>
+              <a href="/affiliate-disclosure/">{{ footerAffiliate }}</a>
             </div>
           </div>
         </div>
-
-        <div class="site-footer-col">
-          <div class="site-footer-links">
-            <a href="{{ '/vpn/recommend/' | withLangPrefix(langKey) }}">{{ footerVpnRecommend }}</a>
-            <a href="{{ '/vpn/posts/' | withLangPrefix(langKey) }}">{{ footerReviews }}</a>
+        <div class="site-footer-bottom">
+          <div>© 2026 an1688</div>
+          <div class="site-footer-bottom-right">
+            <span class="site-footer-bottom-title">{{ footerTitle }}</span>
+            <a href="https://www.an1688.com" target="_blank" rel="nofollow">an1688.com</a>
           </div>
         </div>
-
-        <div class="site-footer-col">
-          <div class="site-footer-links">
-            <a href="/terms/">{{ footerTerms }}</a>
-            <a href="/privacy-policy/">{{ footerPrivacy }}</a>
-            <a href="/dmca/">{{ footerDmca }}</a>
-            <a href="/affiliate-disclosure/">{{ footerAffiliate }}</a>
-          </div>
-        </div>
-      </div>
-      <div class="site-footer-bottom">
-        <div>© 2026 an1688</div>
-        <div class="site-footer-bottom-right">
-          <span class="site-footer-bottom-title">{{ footerTitle }}</span>
-          <a href="https://www.an1688.com" target="_blank" rel="nofollow">an1688.com</a>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    {% endif %}
 
     <script>
       (function () {
