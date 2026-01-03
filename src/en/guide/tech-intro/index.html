@@ -1,0 +1,178 @@
+---
+layout: base.njk
+title: Mainland China Tech Intro
+description: Why the Clash + subscription provider model often appears more resilient in Mainland China (for reference only; not for SEO).
+permalink: /vpn/en/guide/tech-intro/
+lang: en
+noindex: true
+nointerlink: true
+sitemap: false
+---
+
+<h1>Mainland China tech intro: why the Clash + subscription model often feels more “resilient”</h1>
+
+<p>
+  In Mainland China’s network environment, a tool’s “survivability” is often more important than pure performance metrics.
+  Based on long-term real-world observations, the “proxy client + subscription” model (often represented by Clash clients)
+  tends to be more resilient than traditional VPN protocols and many commercial VPN offerings.
+  This is largely driven by architectural factors: more distributed node deployments, higher flexibility, and traffic characteristics that can look closer to ordinary web browsing.
+</p>
+
+<p>
+  This article is for technical/informational reference only. Please comply with applicable laws and service terms.
+</p>
+
+<div class="logo-banner">
+  <img src="/assets/images/clash.png" alt="Clash" loading="lazy" />
+</div>
+
+<h2>1. The conclusion</h2>
+
+<p>
+  The advantage is not that Clash is “more advanced”, but that the overall ecosystem is often more distributed, more flexible, and harder to distinguish at scale.
+  Compared with traditional VPN protocols with fixed handshakes and recognizable patterns, the Clash + subscription workflow can adapt faster by switching nodes,
+  changing server-side protocols, and adjusting routing rules.
+</p>
+
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Examples</th>
+        <th>Resilience (practical)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Traditional VPN</td>
+        <td>PPTP / L2TP / IPsec</td>
+        <td>Very weak</td>
+      </tr>
+      <tr>
+        <td>Commercial VPN</td>
+        <td>Nord / Express / Surfshark, etc.</td>
+        <td>Medium (highly variable)</td>
+      </tr>
+      <tr>
+        <td>Clash + subscription providers</td>
+        <td>Clash-style clients + SS/VLESS/Trojan/Hysteria, etc.</td>
+        <td>Relatively stronger</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>2. Traditional VPN survivability problems</h2>
+
+<div class="logo-banner">
+  <img src="/assets/images/openvpn_logo.png" alt="OpenVPN" loading="lazy" />
+</div>
+
+<p>
+  In Mainland China, traditional VPN protocols often struggle not because they are “low quality”, but because their protocol fingerprints can be relatively uniform.
+  Protocols like PPTP, L2TP, and IPsec tend to have more recognizable handshakes, port usage patterns, and traffic behaviors, making them easier targets for DPI.
+</p>
+
+<p>
+  More importantly, many traditional VPNs operate at the system network layer: all traffic goes through a single tunnel.
+  Once that tunnel is identified and blocked, the failure is usually total, leaving limited room for incremental mitigation.
+</p>
+
+<h2>3. Structural challenges for commercial VPNs</h2>
+
+<div class="logo-banner logo-banner--dark">
+  <img src="/assets/images/logo-cyberghost.svg" alt="CyberGhost" loading="lazy" />
+</div>
+
+<p>
+  Commercial VPNs can be technically capable, but their business model and scale often increase exposure.
+  Providers tend to deploy IP ranges in more visible, more concentrated ways; large user bases using the same app produce uniform traffic patterns;
+  and once a pattern is recognized, IPs can be blocked in batches.
+</p>
+
+<p>
+  In addition, commercial entities usually face stronger compliance and legal constraints, which makes it harder to iterate aggressively with frequent protocol experiments.
+  In fast-changing environments, slow iteration can become a disadvantage.
+</p>
+
+<h2>4. The architecture behind the Clash + subscription model</h2>
+
+<p>
+  To understand why this model can be more resilient, it helps to look at the architecture.
+  Clash is essentially a local traffic orchestrator (a local proxy client), not a VPN.
+  It applies routing rules and forwards traffic to selected proxy endpoints; the actual “cross-border” connectivity is provided by server-side protocols and infrastructure.
+</p>
+
+<p>
+  Practically, Clash behaves like a “traffic control system”: it decides where traffic should go.
+  The work of delivering traffic is done by protocols commonly provided by subscription services, such as Shadowsocks, VLESS (Xray), Trojan, and Hysteria.
+  Many of these designs aim to make proxy traffic look closer to ordinary HTTPS behavior, reducing the chance of being singled out.
+</p>
+
+<h2>5. Why this layered architecture improves survivability</h2>
+
+<p>
+  The key value of this architecture is decentralization.
+  Different providers use different IP resources, different protocol mixes, and different deployments — users are naturally distributed across many smaller nodes.
+  This makes large-scale blocking more costly.
+  Meanwhile, the decoupling means that when one layer fails, you often replace only that layer instead of rebuilding everything.
+</p>
+
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr>
+        <th>Layer</th>
+        <th>Example</th>
+        <th>Replaceable?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Client</td>
+        <td>Clash-style clients</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Protocol</td>
+        <td>SS / VLESS / Trojan / Hysteria, etc.</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Server</td>
+        <td>Node deployment</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Rules</td>
+        <td>Routing policies</td>
+        <td>Yes</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+  This flexibility allows providers to iterate faster and allows users to adapt with fewer changes — often just by refreshing a subscription.
+  When a node or protocol becomes unreliable, switching to a new option can be quicker, and outages can be shorter.
+</p>
+
+<h2>6. Be realistic: there are still risks</h2>
+
+<p>
+  “Harder to block” does not mean “always works”. Subscription providers are not regulated ISPs and quality varies widely.
+  Technical complexity does not guarantee business reliability.
+  When choosing a service, consider operating history, support quality, refund policies, and community feedback — and avoid long-term prepaid plans.
+</p>
+
+<ul>
+  <li>Subscription providers are not regulated ISPs; quality varies widely</li>
+  <li>Low-barrier providers can disappear; avoid long-term prepaid plans</li>
+  <li>Technical complexity does not equal business reliability: operation history, refund policy, and support matter</li>
+</ul>
+
+<p>
+  Overall, the Clash + subscription model can be more resilient due to architectural traits.
+  But the real outcome still depends on the provider’s technical and operational capability — and on your own risk awareness.
+</p>

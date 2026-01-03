@@ -125,11 +125,13 @@ table {
   border: 1px solid rgba(0,0,0,0.12);
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
 .table-scroll {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
 }
 
 .table-scroll > table {
@@ -139,14 +141,24 @@ table {
 
 th, td {
   text-align: left;
-  padding: 10px 12px;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
   vertical-align: top;
 }
 
 thead th {
-  background: rgba(0,0,0,0.03);
+  background: rgba(15, 118, 110, 0.08);
   font-weight: 800;
+  color: rgba(17, 24, 39, 0.92);
+  border-bottom: 1px solid rgba(15, 118, 110, 0.18);
+}
+
+tbody tr:nth-child(even) td {
+  background: rgba(0,0,0,0.012);
+}
+
+tbody tr:hover td {
+  background: rgba(15, 118, 110, 0.06);
 }
 
 tbody tr:last-child td {
@@ -260,6 +272,29 @@ blockquote {
   border-radius: 14px;
   border: 1px solid rgba(0,0,0,0.10);
   box-shadow: var(--shadow-sm);
+}
+
+.logo-banner {
+  margin: 12px auto 10px;
+  max-width: 360px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(0,0,0,0.02);
+  box-shadow: var(--shadow-sm);
+}
+
+.logo-banner--dark {
+  background: #0b1220;
+  border-color: rgba(255,255,255,0.10);
+}
+
+.logo-banner img {
+  width: 100%;
+  height: auto;
+  max-height: 120px;
+  object-fit: contain;
+  display: block;
 }
 
 .vpn-card-list {
