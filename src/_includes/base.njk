@@ -231,6 +231,23 @@
 
     {% if not nointerlink %}
       <footer class="site-footer" role="contentinfo">
+        {% set promoTitle = '蝴蝶加速：首月免费（优惠券码：wkVS84Hy）' %}
+        {% set promoDesc = '想减少跨境访问的卡顿与掉线？先用更低成本快速验证：免费试用，首月使用优惠券码 wkVS84Hy 可免费。' %}
+        {% set promoBtn = '领取优惠券' %}
+        {% if currentLang == 'en' %}
+          {% set promoTitle = 'Butterfly VPN: first month free (coupon: wkVS84Hy)' %}
+          {% set promoDesc = 'Need more stable cross-border connectivity? Try Butterfly VPN. Free trial and use coupon code wkVS84Hy for the first month.' %}
+          {% set promoBtn = 'Get the coupon' %}
+        {% endif %}
+
+        <div style="margin: 0 0 14px; border: 1px solid rgba(15, 118, 110, 0.18); border-radius: 12px; padding: 12px 14px; background: rgba(15, 118, 110, 0.05);">
+          <div style="font-weight: 900; color: #0f766e;">{{ promoTitle }}</div>
+          <div style="margin-top: 6px; line-height: 1.7; color: rgba(0,0,0,0.78);">{{ promoDesc }}</div>
+          <div class="cta-group" style="margin: 10px 0 0;">
+            <a class="cta-primary" href="{{ go_defaults.butterflyvpn }}" target="_blank" rel="nofollow sponsored">{{ promoBtn }}</a>
+          </div>
+        </div>
+
         <div class="site-footer-inner">
           <div class="site-footer-col">
             <div class="site-footer-brand">
@@ -245,7 +262,6 @@
             <div class="site-footer-links">
               <a href="{{ '/' | withLangPrefix(langKey) }}">{{ footerVpnRecommend }}</a>
               <a href="{{ '/vpn/posts/' | withLangPrefix(langKey) }}">{{ footerReviews }}</a>
-              <a href="https://www.vpn-china.org/" target="_blank" rel="nofollow">VPN中国</a>
             </div>
           </div>
 
